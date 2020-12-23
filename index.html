@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Компьютерная помощь — Мышка. — Ремонт компьютеров и ноутбуков</title>
+    <link rel="icon" type="image" href="./assets/icon.png">
+    <link rel="stylesheet" href="font-awesome\css\font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&family=Arial:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Шапка -->
+    <header class="header" id="header">
+		<div class="header-box">
+        <!-- <section class="nav"> -->
+            <a href="#" onclick="return true" class="logo-box">
+                    <img class="logo" src="assets/logo.png">
+            </a>
+            <div class="nav-cells">
+                 <div class="nav-cells-box">
+                    <a href="#1" class="nav-cell">
+                        <p class="nav-cell-text">Цены</p>
+				   </a>
+                    <a href="#2" class="nav-cell">
+                        <p class="nav-cell-text">Контакты</p>
+				   </a>
+                    <a href="#3" class="nav-cell">
+                        <p class="nav-cell-text">Отзывы</p>
+				   </a>
+                    <a href="#4" class="nav-cell">
+                        <p class="nav-cell-text">О компании</p>
+				   </a>
+                    <a href="#5" class="nav-cell">
+                        <p class="nav-cell-text">Скидки</p>
+				   </a>
+                </div>
+            </div>
+
+			<div class="header-mobile">
+				<div class="burger openMenu" id="openMenu" onclick="openMenu()">
+					<div class="burger-part"></div>
+					<div class="burger-part"></div>
+					<div class="burger-part"></div>
+				</div>
+				<div class="burger closeMenu" id="closeMenu" onclick="closeMenu()">
+					<div class="burger-part"></div>
+					<div class="burger-part"></div>
+					<div class="burger-part"></div>
+				</div>
+			</div>
+			<div class="nav-number-text-box">
+                <a class="nav-number" id="nav-number" href="tel:+7 (999) 999-99-99">+7 (999) 999-99-99</a>
+               <p class="nav-text">г. Новосибирск</p>
+		   </div>
+		</div>
+
+		<a class="bg-menu" id="bg-menu" onclick="closeMenu()"></a>
+
+		<nav id="burgerMenuOpen" class="header__nav">
+			<div class="menu-box header__menu">
+				<a href="#1" class="menu__item" onclick="closeMenu()">Цены</a>
+				<a href="#2" class="menu__item" onclick="closeMenu()">Контакты</a>
+				<a href="#3" class="menu__item" onclick="closeMenu()">Отзывы</a>
+				<a href="#4" class="menu__item" onclick="closeMenu()">О компании</a>
+				<a href="#5" class="menu__item" onclick="closeMenu()">Скидки</a>
+			</div>
+		</nav>
+    </header>
+    <!-- Слайдер и форма боратной связи -->
+    <section class="slider-and-form">
+        <div class="slider">
+            <div class="slider__wrapper">
+                <div class="slider__item slider-img-1">
+                    <div class="slider-text">
+                        <p>Выездной сервисный центр в Новосибирске</p> </div>
+                </div>
+                <div class="slider__item slider-img-2">
+                    <div class="slider-text">
+                        <p>Ремонт компьютеров на дому от 500 р.</p> </div>
+                </div>
+                <div class="slider__item slider-img-3">
+                    <div class="slider-text">
+                        <p>Ремонт ноутбуков на дому от 700 р.</p> </div>
+                </div>
+                <div class="slider__item slider-img-4">
+                    <div class="slider-text">
+                        <p>Установка Windows на дому от 450р.</p> </div>
+                </div>
+            </div>
+            <!-- КНОПКИ "НАЗАД" И "ВПЕРЁД" -->
+            <a class="slider__control slider__control_left" href="#" role="button"></a>
+            <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+        </div>
+		<p class="form-title-mobile">Узнать стоимость ремонта:</p>
+		<div class="bg-form" id="bg-form"></div>
+		<button id="form-open-button" class="open-button" onclick="openForm()">Заполните форму</button>
+		<div class="form-popup" id="myForm">
+			<a class="close-button" onclick="closeForm()">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</a>
+			<form class="form" action="php/send-top.php" method="get">
+				<p class="form-title">Узнать стоимость ремонта:</p>
+				<div class="form-box">
+					<input type="text" placeholder="Ваше имя" name="name" class="form-object form-name">
+					<input type="number" placeholder="Ваш номер телефона" name="number" class="form-object form-number">
+					<input type="text" placeholder="Ваш адрес" name="adress" class="form-object form-adress">
+					<div class="">
+                        <select name="system" placeholder="" class="form-object form-system">
+                            <option class="form-object form-system-option" value="Компьютер">Компьютер</option>
+                            <option class="form-object form-system-option" value="Ноутбук">Ноутбук</option>
+                        </select>
+					</div>
+					<textarea type="text" placeholder="Опишите свою проблему" name="problem" class="form-object form-problem"></textarea>
+					<input class="form-button" type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+    </section>
+
+    <!-- Полоска с иконками -->
+    <section class="icon-string">
+        <div class="icon-and-text">
+            <i class="fa fa-string fa-desktop" aria-hidden="true"></i>
+            <h5 class="icon-text">Ремонт компьютеров</h5>
+            <i class="fa fa-string fa-laptop" aria-hidden="true"></i>
+            <h5 class="icon-text">Ремонт ноутбуков</h5>
+            <i class="fa fa-string fa-windows" aria-hidden="true"></i>
+            <h5 class="icon-text">Windows</h5>
+            <i class="fa fa-string fa-cogs" aria-hidden="true"></i>
+            <h5 class="icon-text">Апгрейд</h5>
+            <i class="fa fa-string fa-bullhorn" aria-hidden="true"></i>
+            <h5 class="icon-text">Консультации</h5>
+            <i class="fa fa-string fa-apple" aria-hidden="true"></i>
+            <h5 class="icon-text">Apple</h5>
+            <i class="fa fa-string fa-internet-explorer" aria-hidden="true"></i>
+            <h5 class="icon-text">Интеренет</h5>
+            <i class="fa fa-string fa-headphones" aria-hidden="true"></i>
+            <h5 class="icon-text">Диагностика</h5>
+            <i class="fa fa-string fa-bug" aria-hidden="true"></i>
+            <h5 class="icon-text">Вирусы</h5>
+            <i class="fa fa-string fa-file-archive-o" aria-hidden="true"></i>
+            <h5 class="icon-text">Программы</h5>
+        </div>
+
+        <div class="icon-and-text-media">
+            <i class="fa fa-string fa-desktop" aria-hidden="true"></i>
+            <h5 class="icon-text">Ремонт компьютеров</h5>
+            <i class="fa fa-string fa-laptop" aria-hidden="true"></i>
+            <h5 class="icon-text">Ремонт ноутбуков</h5>
+        </div>
+        <div class="icon-and-text-media">
+            <i class="fa fa-string fa-windows" aria-hidden="true"></i>
+            <h5 class="icon-text">Windows</h5>
+            <i class="fa fa-string fa-cogs" aria-hidden="true"></i>
+            <h5 class="icon-text">Апгрейд</h5>
+            <i class="fa fa-string fa-bullhorn" aria-hidden="true"></i>
+            <h5 class="icon-text">Консультации</h5>
+            <i class="fa fa-string fa-apple" aria-hidden="true"></i>
+            <h5 class="icon-text">Apple</h5>
+        </div>
+        <div class="icon-and-text-media">
+            <i class="fa fa-string fa-internet-explorer" aria-hidden="true"></i>
+            <h5 class="icon-text">Интеренет</h5>
+            <i class="fa fa-string fa-headphones" aria-hidden="true"></i>
+            <h5 class="icon-text">Диагностика</h5>
+            <i class="fa fa-string fa-bug" aria-hidden="true"></i>
+            <h5 class="icon-text">Вирусы</h5>
+            <i class="fa fa-string fa-file-archive-o" aria-hidden="true"></i>
+            <h5 class="icon-text">Программы</h5>
+        </div>
+    </section>
+
+    <!-- Карточки -->
+    <section class="cards">
+           <div class="cards-box">
+            <card class="card card-with-shadow">
+                <p class="card-title">Ремонт компьютера</p>
+                <p class="card-text">Сейчас компьютер есть практически у каждого человека. Выход такой техники из строя для многих потеря. Кто - то может потерять ценные договоры, кто - нибудь бухгалтерские отчёты и всё это может стоить очень больших денег. Если у вас сломался компьютер, то вы можете обратиться за компьютерной помощью к мастерам организации "Mouse", мы произведем ремонт компьютера очень качественно. Выезд мастера и диагностика вашего ПК бесплатна.</p>
+            </card>
+            <card class="card">
+                <h3 class="card-title">Ремонт ноутбука</h3>
+                <p class="card-text">Ноутбуки ломаются довольно часто и мало кто знает, как их ремонтировать, как обращаться с ними в дальнейшем, чтобы продлить срок его службы. Все наши мастера это опытные люди, которые могут помочь вам как в ремонте вашего 'железа', так и помогут настроить вам ваше программное обеспечение.</p>
+            </card>
+            <card class="card no-right-margin card-with-shadow">
+                <h3 class="card-title">Переустановка Windows</h3>
+                <p class="card-text">Самая важная причина переустановки Windows - это когда она была частично, или полностью уничтожена вирусами (вредоносным программным обеспечением), из-за которых ваша работа течёт в несколько раз медленнее, постоянно не получается что-то сделать, а бывает и так, что компьютер вообще не включается при заражении. В таких случаях рекомендуют переустановку операционной системы, плюс нашего сервиса в том, что мы сохраним все ваши файлы до переустановки ОС и перекидываем их на новую, чистую 'винду'.</p>
+            </card>
+            </div>
+
+            <div class="cards-box">
+            <card class="card card-with-shadow">
+                <h3 class="card-title">Антивирусы</h3>
+                <p class="card-text">Антивирус это программа, которая поможет вам восстановить удалённые вирусами файлы, либо 'починить' поврежденные ими файлы, данная программа помогает предотвратить заражение ваших программ, файлов, операционной системы специальным 'кодом'. Наши специалисты с удовольствием помогут справиться вам с вредоносным файлами и программами и защитить вас хорошим антивирусом за очень скромную цену и быстрое время.</p>
+            </card>
+            <card class="card ">
+                <h3 class="card-title">Апгрейд</h3>
+                <p class="card-text">Ваш компьютер/ноутбук зависает? Сильно тормозит и переустановка Windows с чисткой от пыли не помогают? Наши мастера готовы проконсультировать вас по вопросу покупки новых деталей в ваш компьютер/ноутбук. Этот шаг обязателен для того чтобы продлить срок службы вашей техники. Если вам нужно, они обязательно помогут вам с установкой драйверов на новое 'железо' и правильно его настроят.</p>
+            </card>
+            <card class="card no-right-margin card-with-shadow">
+                <h3 class="card-title">Установка программ</h3>
+                <p class="card-text">Сложности в установке программ на ваше устройство? Наши мастера с удовольствием помогут вам с этим вопросом. Мы можем установить практически любую программу на ваш компьютер, или ноутбук, вам больше не нужно ломать голову в поисках нужной, не вредоносной ссылки в интернете, мастера из Mouse сервиса готовы придти к вам на помощь и установить 100% чистые программы.</p>
+            </card>
+            </div>
+    </section>
+
+    <!-- Якорь - Список цен -->
+    <div class="yakor" id="1"></div>
+
+    <!-- Список цен -->
+    <section class="price">
+        <h1 class="price-title">Цены</h1>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Переустановка Windows</h3> </div>
+            <h3 class="price-box-number">от 450р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Чистка компьютера от пыли</h3> </div>
+            <h3 class="price-box-number">от 500р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Чистка ноутбука от пыли</h3> </div>
+            <h3 class="price-box-number">от 700р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Установка драйверов</h3> </div>
+            <h3 class="price-box-number">от 100р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Подключение принтера и периферии</h3> </div>
+            <h3 class="price-box-number">от 300р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Настройка Wi-Fi или интернета</h3> </div>
+            <h3 class="price-box-number">от 300р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Лечение ПК и удаление вирусов</h3> </div>
+            <h3 class="price-box-number">от 400р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Установка антивируса</h3> </div>
+            <h3 class="price-box-number">от 500р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Исправление проблем с зависанием</h3> </div>
+            <h3 class="price-box-number">от 500р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Замена матрицы на ноутбуке</h3> </div>
+            <h3 class="price-box-number">от 600р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Замена деталей ноутбука</h3> </div>
+            <h3 class="price-box-number">от 500р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Апгрейд компьютера</h3> </div>
+            <h3 class="price-box-number">от 400р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Восстановление информации</h3> </div>
+            <h3 class="price-box-number">от 690р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Настройка нового компьютера</h3> </div>
+            <h3 class="price-box-number">от 750р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Замена/ремонт системы охлаждения</h3> </div>
+            <h3 class="price-box-number">от 300р.</h3> </div>
+        <div class="price-box">
+            <div class="price-box-inside">
+                <h3 class="price-box-text">Выезд и диагностика</h3> </div>
+            <h3 class="price-box-number">от 0р.</h3> </div>
+        <p class="price-p">Более точную стоимость услуги или комплекса услуг мастер обозначает после проведения бесплатной диагностики.</p>
+        <p class="price-p">Цены на остальные услуги вы можете узнать позвонив по номеру +7 (999) 999-99-99</p>
+    </section>
+
+    <!-- Якорь - Отзывы -->
+    <div class="yakor" id="3"></div>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+       <div class="reviews-line">
+            <p class="reviews-title">Отзывы</p>
+            <div class="wrapper">
+                <input type="radio" name="point" id="slide1" checked>
+                <input type="radio" name="point" id="slide2">
+                <input type="radio" name="point" id="slide3">
+                <input type="radio" name="point" id="slide4">
+                <input type="radio" name="point" id="slide5">
+                <div class="slider-second">
+                    <div class="slides slide1">
+                        <p class="slides-title">Виталий</p>
+                        <i class="fa fa-star slider-star-full first-star" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <hr class="slider-line">
+                        <p class="slides-text">Срочно нужно было купить сыну новый компьютер, потому что его старый ноутбук уже еле-работал. Позвонил в Мышку, спросил о консультации. Меня перевели на технического специалиста, тот объяснил мне какой компьютер лучше сейчас выбрать, объяснил почему и предложил чтобы мастер подъехал, съездил со мной в магазин, помог с выбором и помог в настройке.</p>
+                        </div>
+                    <div class="slides slide2">
+                        <p class="slides-title">Татьяна</p>
+                        <i class="fa fa-star slider-star-full first-star" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star-o slider-star-half" aria-hidden="true"></i>
+                        <hr class="slider-line">
+                        <p class="slides-text">Стабильно раз в полгода заказываю в Мышке чистку ноутбука, имею скидку постоянного клиента и скидку пенсионерам, мастера очень вежливые, обращаются на 'вы', никаких претензий к сервису нет</p>
+                        </div>
+                    <div class="slides slide3">
+                        <p class="slides-title">Антон</p>
+                        <i class="fa fa-star slider-star-full first-star" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <hr class="slider-line">
+                        <p class="slides-text">Ну пришёл ко мне мужчина лет 35, сказал что винда заражена вирусами, переустановил её, помог настроить, помог установить несколько нужных для меня программ, а самое главное спросил нужно - ли сохранять файлы перед переустановкой, а то я в этом совсем не разбираюсь. Ну в общем отличный сервис, ремонтируют дёшево, в своём деле точно разбираются.</p>
+                        </div>
+                    <div class="slides slide4">
+                        <p class="slides-title">Дарья</p>
+                        <i class="fa fa-star slider-star-full first-star" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <hr class="slider-line">
+                        <p class="slides-text">Приходят приятные молодые люди, прекрасно знают свою работу, где то могут подсказать, что сделала неправильно, помогут с поиском нужной информации и разных программ, отличный сервис по ремонту компьютеров, 10/10</p>
+                        </div>
+                    <div class="slides slide5">
+                        <p class="slides-title">Максим</p>
+                        <i class="fa fa-star slider-star-full first-star" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <i class="fa fa-star slider-star-full" aria-hidden="true"></i>
+                        <hr class="slider-line">
+                        <p class="slides-text">Три дня назад залил клаву, вызвал мастера, он быстренько подобрал для меня дешёвый вариант, съездил, купил, приехал и заменил, отдал я вообще копейки, клавиатура больше стоила)</p>
+                        </div>
+                </div>
+                <div class="controls">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                    <label for="slide4"></label>
+                    <label for="slide5"></label>
+                </div>
+            </div>
+            <form class="form-bot" action="php/send-bot.php" method="get">
+            <input type="text" placeholder="Ваше имя" name="name" class="form-bot-object form-bot-name">
+            <input type="number" placeholder="Ваш телефон" name="number" class="form-bot-object form-bot-number">
+            <div class="">
+                   <p class="form-bot-rating-option">Ваша оценка</p>
+                <select name="rating" placeholder="" class="form-bot-object form-bot-rating">
+                    <option class="form-bot-object form-bot-rating-option" value="5">5</option>
+                    <option class="form-bot-object form-bot-rating-option" value="4">4</option>
+                    <option class="form-bot-object form-bot-rating-option" value="3">3</option>
+                    <option class="form-bot-object form-bot-rating-option" value="2">2</option>
+                    <option class="form-bot-object form-bot-rating-option" value="1">1</option>
+                </select>
+            </div>
+            <textarea type="text" placeholder="Отзыв" name="review" class="form-bot-object form-bot-review"></textarea>
+            <input class="form-bot-button" type="submit" value="Отправить отзыв">
+        </form>
+        </div>
+
+
+    </section>
+
+    <!-- Якорь - Порядок проведения ремонта -->
+    <div class="yakor" id="4"></div>
+
+    <!-- Порядок проведения ремонта -->
+    <section class="order-of-conduct">
+        <p class="order-title">Порядок проведения ремонта</p>
+        <div class="order-box">
+            <div class="order-inside-box"> <span class="fa fa-order fa-order-first fa-mobile" aria-hidden="true"></span>
+                <p class="order-inside-box-title">1</p>
+                <p class="order-inside-box-text">Вы звоните нам по номеру +7 (999) 999-99-99 и вызываете мастера.</p>
+            </div>
+            <div class="order-inside-box"> <span class="fa fa-order fa-car" aria-hidden="true"></span>
+                <p class="order-inside-box-title">2</p>
+                <p class="order-inside-box-text">Мастер подъезжает в назначенное место в указанное время.</p>
+            </div>
+            <div class="order-inside-box"> <span class="fa fa-order fa-headphones" aria-hidden="true"></span>
+                <p class="order-inside-box-title">3</p>
+                <p class="order-inside-box-text">Производится диагностика и мастер оглашает сколько будет стоить ремонт.</p>
+            </div>
+            <div class="order-inside-box"> <span class="fa fa-order fa-cogs" aria-hidden="true"></span>
+                <p class="order-inside-box-title">4</p>
+                <p class="order-inside-box-text">Если вас устроила стоимость, мастер производит ремонт.</p>
+            </div>
+            <div class="order-inside-box"> <span class="fa fa-order fa-files-o" aria-hidden="true"></span>
+                <p class="order-inside-box-title">5</p>
+                <p class="order-inside-box-text">Сдача работы, подписание гарантийного договора и оплата услуг.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section class="about-company">
+        <p class="about-company-title">О компании</p>
+        <p class="about-company-text">Сломался компьютер? Есть вопросы по эксплуатации вашей техники? Обратитесь в сервис по ремонту компьютеров и ноутбуков ‘Mouse’!</p>
+        <p class="about-company-text">Мы занимаемся ремонтом компьютеров и ноутбуков уже 9 лет, наши дипломированные специалисты прекрасно знают все особенности и тонкости ремонта.</p>
+        <p class="about-company-text">Если вам нужно устранить неполадки в работе своего компьютера, очистить ноутбук от вирусов, заменить деталь, обязательно звоните в Mouse, наш сервисный центр предоставляет гарантию до года на все выполненные услуги, а так же вы получаете бесплатный выезд специалиста к вам на дом, при необходимости мы заберём вашу технику к себе в сервис и доставим её обратно совершенно бесплатно.</p>
+        <p class="about-company-text">Мы готовы приехать к вам в любое удобное для вас время, наша компания работает 24 часа в сутки, если вам будет необходима переустановка вашей ОС, наши мастера могут сохранить все ваши данные и перекинуть их на новую ОС.</p>
+        <p class="about-company-text">Мы оказываем услуги компьютерной помощи в городе Новосибирск по очень низким ценам, и наши мастера гарантированно будут у вас на дому уже через один час после оформления заявки.</p>
+        <p class="about-company-text">У нас есть скидки для студентов, пенсионеров и постоянных клиентов.</p>
+        <p class="about-company-text-bottom">Мы оказываем самую качественную и оперативную компьютерную помощь. Звоните прямо сейчас и получите скидку в 10%! </p>
+    </section>
+
+    <!-- Якорь - Контакты -->
+    <div class="yakor" id="2"></div>
+
+    <!-- Контакты -->
+    <section class="map">
+        <div class="map-title">
+            <p>Контакты</p>
+        </div>
+        <div class="map-content">
+            <div class="map-content-box">
+                <p class="map-number">Телефон: +7 (999) 999-99-99</p>
+                <p class="map-mail">Почта : mail@mouse-service.ru</p>
+                <p class="map-question">По вопросам гарантии: +7 999 999-99-99</p>
+                <p class="map-mail">Почта: garant@mouse-service.ru</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Якорь - Скидки -->
+    <div class="yakor" id="5"></div>
+
+    <!-- Скидки и таймер -->
+    <section class="sale-cards">
+        <p class="sale-cards-first-title">Акции и скидки</p>
+
+		<script type="text/javascript">
+
+		</script>
+
+        <div class="text-and-countdown">
+            <p class="sale-cards-first-text">Всего 5 дней скидка 20%!</p>
+			<div class="timer_wrap" id="timer_wrap">
+				<div class="clock" id="clock">
+					<div class="day" id='day'>
+						<p class="timer-p" id='day0'></p>
+						<p class="timer-p" id='day1'></p>
+						<p class="timer-text">Дней</p>
+					</div>
+
+					<div class="hour" id='hour'>
+						<p class="timer-p" id='hour0'></p>
+						<p class="timer-p" id='hour1'></p>
+						<p class="timer-text">Часов</p>
+					</div>
+
+					<div class="min" id='min'>
+						<p class="timer-p" id='min0'></p>
+						<p class="timer-p" id='min1'></p>
+						<p class="timer-text">Минут</p>
+					</div>
+
+					<div class="sec" id='sec'>
+						<p class="timer-p" id='sec0'></p>
+						<p class="timer-p" id='sec1'></p>
+						<p class="timer-text">Секунд</p>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="sale-cards-box">
+            <div class="sale-card sale-card-with-shadow">
+                <p class="sale-card-text">Акция 1: Приведи друга и получи скидку 10% на следующий ремонт.</p>
+            </div>
+            <div class="sale-card">
+                <p class="sale-card-text">Акция 2: Покажи мастеру визитку и получи скидку 5% на все работы.</p>
+            </div>
+            <div class="sale-card no-right-margin sale-card-with-shadow">
+                <p class="sale-card-text">Акция 3: Расскажи о нас друзьям в Instagram и получи 10% скидку.</p>
+            </div>
+            <div class="sale-card sale-card-with-shadow">
+                <p class="sale-card-text">Скидка 1: при переустановке Windows, скидка на антивирус 20%.</p>
+            </div>
+            <div class="sale-card ">
+                <p class="sale-card-text">Скидка 2: Скидка для пенсионеров 10%</p>
+            </div>
+            <div class="sale-card no-right-margin sale-card-with-shadow">
+                <p class="sale-card-text">Скидка 3: Скидка для студентов 5%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages">
+        <p class="advantages-title">Преимущества</p>
+        <div class="advantages-box">
+            <div class="advantages-inside-box">
+                <p class="advantages-inside-box-text">Бесплатный выезд и диагностика</p>
+            </div>
+            <div class="advantages-inside-voidbox"></div>
+            <div class="advantages-inside-box">
+                <p class="advantages-inside-box-text">Срочный ремонт, в среднем полтора часа</p>
+            </div>
+            <div class="advantages-inside-voidbox"></div>
+            <div class="advantages-inside-box">
+                <p class="advantages-inside-box-text">При необходимости забираем технику в офис, доставка бесплатно.</p>
+            </div>
+            <div class="advantages-inside-voidbox"></div>
+            <div class="advantages-inside-box">
+                <p class="advantages-inside-box-text">Бесплатная консультация по телефону и при первом обращение</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+		<i class="fa fa-phone footer-icon" aria-hidden="true"></i>
+		<a class="footer-number" href="tel:+7 (999) 999-99-99">+7 (999) 999-99-99</a>
+    </footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/main.js"></script>
+<script src="js/timer.js"></script>
+
+</body>
+
+</html>

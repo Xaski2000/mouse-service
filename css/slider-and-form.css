@@ -1,0 +1,302 @@
+.slider-and-form {
+  padding: 0px 10px;
+  min-height: 480px;
+  width: 100%;
+  margin: 100px 0px 0px 0px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  position: relative;
+}
+
+/* ОСНОВНЫЕ СТИЛИ */
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 66%;
+  display: inline-block;
+  margin: auto 0px;
+}
+
+.slider__wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+  /* 0.6 длительность смены слайда в секундах */
+
+}
+
+.slider__item {
+  flex: 0 0 100%;
+  /* определяет количество активных слайдов (в данном случае 1 */
+  max-width: 100%;
+  /* определяет количество активных слайдов (в данном случае 1 */
+  height: 480px;
+  width: 1200px;
+}
+
+.slider-img-1 {
+  background: url(../assets/slider-1.jpg);
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+.slider-img-2 {
+  background: url(../assets/slider-2.jpg);
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+.slider-img-3 {
+  background: url(../assets/slider-3.jpg);
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+.slider-img-4 {
+  background: url(../assets/slider-4.jpg);
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+}
+
+.slider-text {
+  padding: 60px;
+  color: #009bff;
+  font-size: 66px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px white;
+  line-height: 1.2em;
+  font-weight: 700;
+}
+
+/* СТИЛИ ДЛЯ КНОПОК "НАЗАД" И "ВПЕРЁД" */
+.slider__control {
+  position: absolute;
+  display: none;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 0px;
+  /* ширина кнопки */
+  height: 0px;
+  /* высота кнопки */
+  opacity: .5;
+  /* прозрачность */
+  background: #000;
+  /* цвет фона */
+}
+
+.slider__control_show {
+  display: flex;
+}
+
+.slider__control:hover,
+.slider__control:focus {
+  text-decoration: none;
+  outline: 0;
+  opacity: .9;
+  /* прозрачность */
+}
+
+.slider__control_left {
+  left: 0;
+}
+
+.slider__control_right {
+  right: 0;
+}
+
+.slider__control::before {
+  content: '';
+  display: inline-block;
+  width: 0px;
+  /* ширина иконки (стрелочки) */
+  height: 0px;
+  /* высота иконки (стрелочки) */
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.slider__control_left::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_right::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/* Форма
+.
+.
+.
+.
+.
+*/
+.bg-form {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 3000px;
+	width: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, .5);
+	z-index: 999999;
+}
+
+.form-popup {
+	margin-left: 20px;
+	display: inline-block;
+	width: 33%;
+	height: 100%;
+}
+
+.form-popup-class {
+	position: fixed;
+	top: 20%;
+	left: 0;
+	right: 0;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+}
+
+.form-title {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 47px;
+  color: #009bff;
+  font-weight: 600;
+  margin: 0px 0px 25px 10px;
+}
+
+.form-box {
+	height: 70%;
+	width: 100%;
+}
+
+.form-object {
+  height: 50px;
+  width: 100%;
+  margin: 0px 0px 5px;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 0px 0px 0px 0px;
+  font-size: 15px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  padding-left: 15px;
+}
+
+.form-name {}
+
+.form-number {
+  -moz-appearance: textfield;
+}
+
+.form-number::-webkit-outer-spin-button,
+.form-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.form-adress {}
+
+.form-system {
+	background-color: #fff;
+}
+
+.form-system-option {}
+
+.form-problem {
+  height: 75px;
+  resize: none;
+}
+
+.form-problem::placeholder {
+  padding-top: 5px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.form-problem::value {
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.form-button {
+  background-color: #009bff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  height: 40px;
+  width: 100%;
+  border-width: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.form-title-mobile {
+	display: none;
+	width: 100%;
+	font-family: "Montserrat", Sans-serif;
+    font-size: 20px;
+    color: #009bff;
+    font-weight: 600;
+    margin: 0px 0px 25px 10px;
+}
+
+.open-button {
+	  background-color: #009bff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    height: 40px;
+    width: 100%;
+    border-width: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+	  display: none;
+}
+
+.close-button {
+	text-align: right;
+	font-size: 40px;
+	color: white;
+	display: none;
+}

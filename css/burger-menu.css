@@ -1,0 +1,25 @@
+.burger {
+	height: 40px;
+	width: 35px;
+}
+
+.burger-part {
+	width: 35px;
+	height: 5px;
+	background-color: #009bff;
+	border-radius: 5px;
+	transition: 0.4s;
+	margin: 6px 0;
+}
+
+.openMenu {
+	height: 40px;
+	width: 35px;
+	display: none;
+}
+
+.closeMenu {
+	height: 40px;
+	width: 35px;
+	display: none;
+}

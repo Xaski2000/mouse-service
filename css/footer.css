@@ -1,0 +1,23 @@
+.footer {
+    margin-top: 200px;
+    height: 40px;
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.footer-icon {
+    color: #009bff;
+	font-size: 28px;
+	/* transform: rotate(180deg); */
+	margin: 0 10px auto 20px;
+}
+
+.footer-number {
+    text-decoration: none;
+    color: #009bff;
+    font-size: 26px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+}
